@@ -1,0 +1,36 @@
+{
+  "name": "sims_back_end_node",
+  "version": "1.0.0",
+  "description": "This repository serves as a template for backend software development projects, featuring a structured and efficient workflow specifically tailored for backend development. It provides a solid foundation for building robust and scalable backend systems, implementing RESTful APIs, and managing data persistence",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/mongoose": "^5.11.97",
+    "@types/supertest": "^6.0.2",
+    "cookie-parser": "^1.4.6",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.2",
+    "nodemon": "^3.1.0"
+  }
+}
