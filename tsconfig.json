@@ -6,7 +6,7 @@
     "baseUrl": "src",
     "sourceMap": true,
     "strict": true,
-    "noImplicitAny": true
+    "noImplicitAny": false
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

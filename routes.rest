@@ -1,0 +1,45 @@
+GET http://localhost:3000/auth
+
+### register
+
+POST http://localhost:3000/auth/register 
+Content-Type:  application/json
+
+{
+    "username": "newusuer",
+    "email" : "tijod19289@haislot.com",
+    "password" : "yaaaaaaay"
+}
+### Login
+POST http://localhost:3000/auth/login 
+Content-Type:  application/json
+
+{
+    "email" : "yayae@g.com",
+    "password" : "yaaaaaaay"
+}
+### Protected
+GET http://localhost:3000/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2Yzc4YWVmNDYyMjY2OGZjYTI3ZjQiLCJpYXQiOjE3MTM4NzY4ODcsImV4cCI6MTcxMzg4MDQ4N30.kwYKXDY7_fTjT1L_Sg3TsxaZ4sKcDrDvc6FNKh0cWjA
+### refresh token
+POST  http://localhost:3000/auth/refresh
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2Yzc4YWVmNDYyMjY2OGZjYTI3ZjQiLCJpYXQiOjE3MTM4ODAxOTMsImV4cCI6MTcxNDQ4NDk5M30.9wfWE7T_fjCsGgsoDtX0a7a-rUb8vJbkjr8roIRtgmw
+
+### change pass
+PATCH  http://localhost:3000/auth/password
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2Yzc4YWVmNDYyMjY2OGZjYTI3ZjQiLCJpYXQiOjE3MTM4ODE0ODksImV4cCI6MTcxMzg4NTA4OX0.Lty64l1_dEBoC5RIg1CsoafJNw9GMbu3pln_Q6UsF1A
+Content-Type:  application/json
+
+{
+    "password" : "newpasswod"
+}
+### first time 
+
+PATCH  http://localhost:3000/auth/invitePass
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI3ZWQwMzFiNjJmZDQ5NGZmOTcyZTEiLCJlbWFpbCI6InRpam9kMTkyODlAaGFpc2xvdC5jb20iLCJpYXQiOjE3MTM4OTI2MTEsImV4cCI6MTcxNDQ5NzQxMX0.EyiEuV3yovWjW0oleYqj0sSAeLQEj9DhpDQDQzq1cqM
+Content-Type:  application/json
+
+{
+    "password" : "newpasswod"
+}
+
