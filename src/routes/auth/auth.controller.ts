@@ -42,9 +42,9 @@ async function login(req: Request, res: Response): Promise<any> {
     // res.status(200).send(user);
     const tokens = await user.generateAuthTokens();
     res.send({ ...tokens });
-  } catch (e: unknown) {
+  } catch (e: any) {
     console.log(e);
-    res.status(400).send(e);
+    res.status(400).send({ message: e.message });
   }
 }
 async function getUserProfile(req: any, res: Response) {
@@ -57,8 +57,8 @@ async function getUserProfile(req: any, res: Response) {
 async function getNewAccessToken(req: any, res: Response): Promise<void> {
   try {
     const user = req.user;
-    const tokens = await user.generateAuthTokens();
-    res.send({ ...tokens });
+    const tokens = await user.generateNewAuthToken();
+    res.send(tokens as { accessToken: string });
   } catch (e: unknown) {
     console.log(e);
     res.status(400).send(e);
@@ -81,6 +81,29 @@ async function changePassword(req: any, res: Response): Promise<void> {
     res.status(400).send(e);
   }
 }
+async function logout(req: any, res: Response): Promise<void> {
+  try {
+    const user = req.user;
+    user.tokens = user.tokens.filter((t: string) => t !== req.token);
+    await user.save();
+    console.log(req.user);
+    res.status(200).send("logged out successfully");
+  } catch (e: unknown) {
+    console.log(e);
+    res.status(400).send(e);
+  }
+}
+async function logoutAll(req: any, res: Response): Promise<void> {
+  try {
+    const user = req.user;
+    user.tokens = [];
+    await user.save();
+    res.status(200).send({ message: "logged out from all devices" });
+  } catch (e: any) {
+    console.log(e);
+    res.status(400).send(e.message || e);
+  }
+}
 
 async function findByCredentials(
   email: string,
@@ -99,4 +122,12 @@ async function findByCredentials(
   return user;
 }
 
-export { register, login, getUserProfile, getNewAccessToken, changePassword };
+export {
+  register,
+  login,
+  getUserProfile,
+  getNewAccessToken,
+  changePassword,
+  logout,
+  logoutAll,
+};

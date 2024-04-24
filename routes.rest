@@ -7,39 +7,48 @@ Content-Type:  application/json
 
 {
     "username": "newusuer",
-    "email" : "tijod19289@haislot.com",
-    "password" : "yaaaaaaay"
+    "email" : "new@haislot.com",
+    "password" : "newpasswod"
 }
 ### Login
 POST http://localhost:3000/auth/login 
 Content-Type:  application/json
 
 {
-    "email" : "yayae@g.com",
-    "password" : "yaaaaaaay"
+    "email" : "new@haislot.com",
+    "password" : "newpasswod"
 }
 ### Protected
 GET http://localhost:3000/auth/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2Yzc4YWVmNDYyMjY2OGZjYTI3ZjQiLCJpYXQiOjE3MTM4NzY4ODcsImV4cCI6MTcxMzg4MDQ4N30.kwYKXDY7_fTjT1L_Sg3TsxaZ4sKcDrDvc6FNKh0cWjA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI3ZWQwMzFiNjJmZDQ5NGZmOTcyZTEiLCJpYXQiOjE3MTM5NzUyODAsImV4cCI6MTcxMzk3ODg4MH0.eOxvAWtNye1JH5MlqB_ryenjLkG8rODUhm92dqOqLEA
 ### refresh token
 POST  http://localhost:3000/auth/refresh
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2Yzc4YWVmNDYyMjY2OGZjYTI3ZjQiLCJpYXQiOjE3MTM4ODAxOTMsImV4cCI6MTcxNDQ4NDk5M30.9wfWE7T_fjCsGgsoDtX0a7a-rUb8vJbkjr8roIRtgmw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI5MmVjZTJlMGI3YzE4YzJiN2FkZmIiLCJpYXQiOjE3MTM5Nzg4OTcsImV4cCI6MTcxMzk3ODkwMH0.gKQg3Y2_ZttdTngQADs4o2qYQ9abduPkB-iPrdEiphU
+ 
 
 ### change pass
 PATCH  http://localhost:3000/auth/password
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2Yzc4YWVmNDYyMjY2OGZjYTI3ZjQiLCJpYXQiOjE3MTM4ODE0ODksImV4cCI6MTcxMzg4NTA4OX0.Lty64l1_dEBoC5RIg1CsoafJNw9GMbu3pln_Q6UsF1A
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI3ZWQwMzFiNjJmZDQ5NGZmOTcyZTEiLCJpYXQiOjE3MTM5NzUyODAsImV4cCI6MTcxMzk3ODg4MH0.eOxvAWtNye1JH5MlqB_ryenjLkG8rODUhm92dqOqLEA
 Content-Type:  application/json
 
 {
-    "password" : "newpasswod"
+    "password" : "newpasswod2"
 }
 ### first time 
 
 PATCH  http://localhost:3000/auth/invitePass
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI3ZWQwMzFiNjJmZDQ5NGZmOTcyZTEiLCJlbWFpbCI6InRpam9kMTkyODlAaGFpc2xvdC5jb20iLCJpYXQiOjE3MTM4OTI2MTEsImV4cCI6MTcxNDQ5NzQxMX0.EyiEuV3yovWjW0oleYqj0sSAeLQEj9DhpDQDQzq1cqM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI5MmVjZTJlMGI3YzE4YzJiN2FkZmIiLCJlbWFpbCI6Im5ld0BoYWlzbG90LmNvbSIsImlhdCI6MTcxMzk3NDk5MCwiZXhwIjoxNzE0NTc5NzkwfQ.2oXezWEkkF6_Qaz60Y5tuJJA-cdQ4HjMSvHfn9T21uw
 Content-Type:  application/json
 
 {
     "password" : "newpasswod"
 }
 
+### logout 
+
+POST  http://localhost:3000/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI5MmVjZTJlMGI3YzE4YzJiN2FkZmIiLCJpYXQiOjE3MTM5ODMxOTcsImV4cCI6MTcxNDU4Nzk5N30.Lr-UTDbLgdeD5NTDLuo4KXGRWcn1_6SDmognoP2OBLE
+
+### logout all
+POST  http://localhost:3000/auth/logoutAll
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI5MmVjZTJlMGI3YzE4YzJiN2FkZmIiLCJpYXQiOjE3MTM5ODI0MzksImV4cCI6MTcxMzk4NjAzOX0.a-bUBU_MRa_GjO5wsJ9wjs1FLnFaLLBm98CV8Cjblg4

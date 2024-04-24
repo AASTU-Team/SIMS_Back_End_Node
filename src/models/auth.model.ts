@@ -24,6 +24,7 @@ interface IAuth {
 // }
 interface IAuthMethods {
   generateAuthTokens(): Promise<{}>;
+  generateNewAuthToken(): Promise<{}>;
 }
 // interface AuthModel extends Model<IAuth, {}, IAuthMethods> {
 //   findByCredentials(
@@ -91,6 +92,20 @@ AuthSchema.method("generateAuthTokens", async function generateAuthTokens() {
   await this.save();
   return { accessToken, refreshToken };
 });
+
+AuthSchema.method(
+  "generateNewAuthToken",
+  async function generateNewAuthToken() {
+    const id: Types.ObjectId = this._id as Types.ObjectId;
+    const accessTokenPromise = jwt.sign(
+      { _id: id.toString() },
+      process.env.JWT_AT_SECRET as string,
+      { expiresIn: "1h" }
+    );
+    const [accessToken] = await Promise.all([accessTokenPromise]);
+    return { accessToken };
+  }
+);
 
 AuthSchema.statics.findByCredentials = async (
   email: string,
