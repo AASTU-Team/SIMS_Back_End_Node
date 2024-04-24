@@ -28,11 +28,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI5MmVjZ
 
 ### change pass
 PATCH  http://localhost:3000/auth/password
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI3ZWQwMzFiNjJmZDQ5NGZmOTcyZTEiLCJpYXQiOjE3MTM5NzUyODAsImV4cCI6MTcxMzk3ODg4MH0.eOxvAWtNye1JH5MlqB_ryenjLkG8rODUhm92dqOqLEA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI5MmVjZTJlMGI3YzE4YzJiN2FkZmIiLCJpYXQiOjE3MTM5ODM3NzIsImV4cCI6MTcxMzk4NzM3Mn0.C4sHLacDdTrtYdZ954RFZFMkwH__mam8F7qwDJwpUts
 Content-Type:  application/json
 
 {
-    "password" : "newpasswod2"
+    "password" : "newpasswod23"
 }
 ### first time 
 

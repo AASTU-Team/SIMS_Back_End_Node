@@ -124,6 +124,13 @@ AuthSchema.statics.findByCredentials = async (
   }
   return user;
 };
+AuthSchema.pre("save", async function (next) {
+  if (this.isModified("password")) {
+    console.log("changePassword");
+    // this.password = await bcrypt.hash(this.password , 8)
+  }
+  next();
+});
 
 const Auth = mongoose.model<IAuth, AuthModel>("Auth", AuthSchema);
 export default Auth;
